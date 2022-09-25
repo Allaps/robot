@@ -1,17 +1,19 @@
 *** Settings ***
-Documentation    Login
+Documentation  Login Functionality
 Library  SeleniumLibrary
 
 *** Variables ***
-${url}   https://linkedin.com/login
 
 *** Test Cases ***
-Verify Login to linkedin
-    Open Browser   ${url}  chrome
-    Wait until element is visible   id:username
-    #Wait Until Keyword Succeeds  id:username
-    Input Text   id:username  aallps@gmail.com
-    Input Text  id:password  ZeroLand123*
-    Click Element   xpath://*[@type="submit"]
-    #Element Should be visible   title:Notifications timeout 5
+Verify Successful Login to the-internet.herokuapp
+    [documentation]  This test case verifies that user is able to successfully Login to the-internet.herokuapp
+    [tags]  Smoke
+    Open Browser  https://the-internet.herokuapp.com/login  Chrome
+    Wait Until Element Is Visible  id:username  timeout=5
+    Input Text  id:username  tomsmith
+    Input Password  id:password  SuperSecretPassword!
+    Click Element  css:button[type="submit"]
+    Element Should Be Visible  css:[href="/logout"]  timeout=5
     Close Browser
+
+*** Keywords ***
