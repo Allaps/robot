@@ -16,4 +16,8 @@ Verify Successful Login to the-internet.herokuapp
     Element Should Be Visible  css:[href="/logout"]  timeout=5
     Close Browser
 
+<<<<<<< HEAD
 *** Keywords ***
+=======
+*** Keywords ***
+>>>>>>> 9f63e4010511b26478c6597a0180394a7290f2e5
